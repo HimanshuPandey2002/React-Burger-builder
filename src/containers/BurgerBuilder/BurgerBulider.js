@@ -70,6 +70,9 @@ export default class BurgerBulider extends Component {
   purchaseCancelHandler = () => {
     this.setState({purchasing: false});
   }
+  purchaseContinueHandler = () => {
+    alert("Continue!!")
+  }
   render() {
     const disabledInfo = { ...this.state.ingredients };
     for (let key in disabledInfo) {
@@ -82,7 +85,11 @@ export default class BurgerBulider extends Component {
           show={this.state.purchasing}
           modalClosed={this.purchaseCancelHandler}
         >
-          <OrderSummary ingredients={this.state.ingredients} />
+          <OrderSummary
+            cancel={this.purchaseCancelHandler}
+            continue={this.purchaseContinueHandler}
+            ingredients={this.state.ingredients}
+          />
         </Modal>
         <Burger ingredients={this.state.ingredients} />
         <BuildControls

@@ -86,6 +86,7 @@ export default class BurgerBulider extends Component {
           modalClosed={this.purchaseCancelHandler}
         >
           <OrderSummary
+            price={this.state.totalPrice}
             cancel={this.purchaseCancelHandler}
             continue={this.purchaseContinueHandler}
             ingredients={this.state.ingredients}

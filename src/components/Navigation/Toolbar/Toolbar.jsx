@@ -1,13 +1,16 @@
 import React from 'react'
 import Logo from '../../Logo/Logo'
 import './Toolbar.css'
+import NavigationItems from '../NavigationItems/NavigationItems'
 
 function Toolbar(props) {
     return (
         <header className="Toolbar">
             <div>MENU</div>
             <Logo />
-            <nav></nav>
+            <nav>
+                <NavigationItems />
+            </nav>
         </header>
     )
 }
